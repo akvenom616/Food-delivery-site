@@ -1,0 +1,99 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aboutus</title>
+    <link rel="icon" type="image/png" href="/static/app1/fevicon.jpg">
+    <link rel="stylesheet" type="text/css" href="{% static 'app1/aboutus.css' %}">
+</head>
+
+<body>
+    <div class="bg-image"></div>
+    <div class="container">
+
+<nav class="nav-bar">
+    <div class="nav-title">
+    <img src="/static/app1/fevicon.jpg" alt="Logo" class="nav-logo"/>
+    </div>
+
+    <ul>
+      <li><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+      <li><a class="nav-link" href="{% url 'aboutus' %}">About Us</a></li>
+      <li><a class="nav-link" href="{% url 'feedback' %}">Feedback</a></li>
+    </ul>   
+</nav>
+  
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+        }
+        .hero {
+            background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+
+<div class="bg-gray-50 text-gray-800">
+
+    <section class="hero h-96 flex items-center justify-center text-white text-center">
+        <div class="bg-black bg-opacity-50 p-8 rounded-xl">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">Who Are We?</h2>
+            <p class="text-lg">Your favourite flavors, just one click away!</p>
+        </div>
+    </section>
+
+    <section class="bg-gray-200 mx-auto px-6 py-12">
+        <h3 class="text-3xl font-bold text-center text-purple-800 mb-8">Our Story</h3>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div>
+                <p class="text-lg leading-relaxed">
+                    Delish is your one-stop online food destination! Founded with passion and driven by flavor,
+                    we bring you the best dishes from local chefs and popular kitchens. Whether you're craving spicy Indian snacks,
+                    cheesy pizzas, or healthy wraps — we deliver joy in every bite.
+                </p>
+                <p class="mt-4 text-lg leading-relaxed">
+                    Our mission is to make delicious food accessible, quick, and affordable. With a curated menu, seamless ordering,
+                    and fast delivery, we ensure a satisfying experience every time.
+                </p>
+            </div>
+            <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" class="rounded-xl shadow-lg" alt="Delicious Food" style="width: 90%; height: 90%;">
+        </div>
+    </section>
+
+
+    <section class="bg-orange-50 py-12 px-6">
+        <h3 class="text-3xl font-bold text-center text-purple-800 mb-10">Meet Our Team</h3>
+        <div class="flex flex-wrap justify-center gap-8">
+            <div class="text-center">
+                <img src="https://i.pravatar.cc/150?img=1" class="w-32 h-32 rounded-full mx-auto shadow-md">
+                <h4 class="mt-4 font-semibold text-lg">Agrim Kalia</h4>
+                <p class="text-sm text-gray-600">Founder & Full Stack Developer</p>
+            </div>
+            <div class="text-center">
+                <img src="https://i.pravatar.cc/150?img=3" class="w-32 h-32 rounded-full mx-auto shadow-md">
+                <h4 class="mt-4 font-semibold text-lg">Aryan Parbhakar</h4>
+                <p class="text-sm text-gray-600">Co-Founder & Full Stack Developer</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white text-center p-4 mt-12">
+        Owned by: John cena 
+        <p>For inquiries, partnerships, or feedback, CONTACT out to us at:</p>
+        
+        <p>Email: delishkitchen@gmail.com | Phone: +91 12345 67890 | Address: 123 Food Street, Flavor Town, India <br>
+        
+        Contact Timings: 9:00 am to 9:00 pm 
+        </p>
+
+        &copy; 2025 Delish. All rights reserved.
+    </footer>
+</div> 
+</body>
+</html>

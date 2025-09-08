@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="icon" type="image/png" href="/static/app1/fevicon.jpg">
+    <link rel="stylesheet" type="text/css" href="{% static 'app1/signup.css' %}">
+
+    </head>
+<body>
+<div class="bg-image"></div>
+<div class="container">
+    <center><h2>Register!</h2>
+    
+    <form method="post">
+  {% csrf_token %}
+  <input type="text" name="username" placeholder="Username" required><br><br>
+  <input type="email" name="email" placeholder="Email" required><br><br>
+  <input type="password" name="password" placeholder="Password" required><br><br>
+  <button class="bclass" type="submit">Register</button>
+</form>
+
+{% if messages %}
+  <ul class="messages-list">
+    {% for message in messages %}
+      <li class="message-item">{{ message }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+    <p>Already a user?<a href="{% url 'login' %}" style="color: #c7047f;">Login</a></p>
+    </center>
+    </div>
+</body>
+
+
+</html>

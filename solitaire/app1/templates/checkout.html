@@ -1,0 +1,142 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Placed Successfully</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: cursive;
+        }
+        body {
+            height: 100vh;
+            width: 100vw;
+            min-height: 100vh;
+        }
+        .container {
+            
+            background: url("{% static 'app1/deliverybg.png' %}") no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            min-width: 100vw;
+            display: flex;
+            flex-direction: column; 
+        }
+        .nav-bar {
+            background: rgb(66, 39, 39); 
+            display: flex;
+            justify-content: space-between;   
+            align-items: center;  
+            padding-top: 20px;     
+            padding: 20px;
+            position: relative;
+            z-index: 2; 
+        }
+        .nav-logo {
+            width: 45px;
+            height: 36px;
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        .nav-bar ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 20px;
+        }
+        .nav-link {
+            font-family: cursive, sans-serif;
+            font-size: 24px;
+            color: rgb(182, 165, 165);
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: color 0.3s, background 0.3s, text-decoration 0.3s;
+        }
+        .nav-link:hover,
+        .nav-link:focus {
+            color: #8a035d;
+            background: #ecd1ff;
+            text-decoration: underline;
+        }
+
+        .thankyou-center-wrapper {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .thankyou-container {
+            max-width: 500px;
+            width: 100%;
+            margin: 0;
+            padding: 2em;
+            background: rgba(248,249,250,0.96);
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: 0 5px 32px -16px #888888;
+            animation: slideIn 1.0s both;
+        }
+        .thankyou-container h1 {
+            color: #4a28a7;
+            margin-bottom: 1em;
+        }
+        .thankyou-container p {
+            font-size: 1.2em;
+            color: #444;
+        }
+        .thankyou-container .go-home {
+            width: 50%;
+            padding: 18px 20px;
+            border-radius: 40px;
+            color: #fff;
+            font-family: cursive;
+            border: none;
+            font-size: 20px;
+            background-color: #7d0351;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background .2s;
+            display: inline-block;
+        }
+        .thankyou-container .go-home:hover {
+            background: #ba1d80;
+        }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+    
+        @media (max-width: 600px) {
+            .thankyou-container {
+                max-width: 98vw;
+                padding: 1em;
+            }
+            .nav-link { font-size: 17px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <nav class="nav-bar">
+        <div class="nav-title">
+            <img src="{% static 'app1/fevicon.jpg' %}" alt="Logo" class="nav-logo"/>
+        </div>
+        <ul>
+            <li><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+            <li><a class="nav-link" href="{% url 'aboutus' %}">About Us</a></li>
+            <li><a class="nav-link" href="{% url 'feedback' %}">Feedback</a></li>
+        </ul>
+    </nav>
+    <div class="thankyou-center-wrapper">
+        <div class="thankyou-container">
+            <h1>Thank You!</h1>
+            <p>Your order has been placed successfully.<br>
+               We'll contact you soon with delivery details.</p>
+            <a href="{% url 'home' %}" class="go-home">Continue Shopping</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

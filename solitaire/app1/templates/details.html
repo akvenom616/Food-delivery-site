@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Details</title>
+    <link rel="icon" type="image/png" href="/static/app1/fevicon.jpg">
+    <link rel="stylesheet" type="text/css" href="{% static 'app1/details.css' %}">
+    
+</head>
+<body>
+<div class="container">
+    <nav class="nav-bar">
+    <div class="nav-title">
+    <img src="/static/app1/fevicon.jpg" alt="Logo" class="nav-logo"/>
+  </div>
+
+    <ul>
+      <li><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+      <li><a class="nav-link" href="{% url 'aboutus' %}">About Us</a></li>
+      <li><a class="nav-link" href="{% url 'feedback' %}">Feedback</a></li>
+    </ul>   
+  </nav>
+
+    <center><h1>Enter Your Details</h1></center>
+    <form method="post">
+        {% csrf_token %}
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required><br><br>
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="4" required></textarea><br><br>
+
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required><br><br>
+
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state" required><br><br>
+
+        <label for="zip">Zip Code:</label>
+        <input type="text" id="zip" name="zip" required><br><br>
+
+        <label for="payment">Payment Method:</label>
+        <select id="payment" name="payment" required>
+            <option value="debit_card">Debit Card</option>
+            <option value="paypal">UPI</option>
+            <option value="cod">Cash/UPI on Delivery</option>
+        </select><br><br>
+
+        <label for="notes">Additional Notes:</label>
+        <textarea id="notes" name="notes" rows="4"></textarea><br><br>
+
+        <center>
+        <a href="{% url 'checkout' %}" class="b1">Place Order</a>
+        </center>
+ 
+
+    </form>
+</div>
+ </body>   
+</html>

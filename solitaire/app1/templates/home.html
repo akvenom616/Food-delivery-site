@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Menu</title>
+  <link rel="icon" type="image/png" href="/static/app1/fevicon.jpg">
+  <link rel="stylesheet" href="{% static 'app1/home.css' %}" />
+</head>
+<body>
+  
+<div class="container">
+ 
+  <nav class="nav-bar">
+    <div class="nav-title">
+    <img src="/static/app1/fevicon.jpg" alt="Logo" class="nav-logo"/>
+  </div>
+
+    <ul>
+      <li><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+      <li><a class="nav-link" href="{% url 'aboutus' %}">About Us</a></li>
+      <li><a class="nav-link" href="{% url 'feedback' %}">Feedback</a></li>
+    </ul>   
+  </nav>
+  
+  <div class="image">
+    <div class="text-overlay">
+      <h1>Delish Kitchen</h1>
+      <p>Indulge in a regal feast as our sovereign service </p>
+      <p1>delivers gourmet treasures to your doorstep, fit for kings and queens.</p1>
+      <br>
+      <button id="order-now">Order Now</button>
+    </div>
+    
+  </div>
+  
+
+  
+<div class="container">
+<div class="content-wrapper">
+  <div class="tab-panel" id="tabPanel">
+    <div class="active-bar" id="activeBar"></div>
+    <button class="tab" data-category="Pizza">Pizza</button>
+    <button class="tab" data-category="Burger">Burger</button>
+    <button class="tab" data-category="Sandwich">Sandwich</button>
+    <button class="tab" data-category="SouthIndian">South Indian</button>
+    <button class="tab" data-category="Beverages">Beverages</button>
+    <button class="tab" data-category="Desserts">Desserts</button>
+  </div>
+
+  <div id="cart-container">
+    <span id="cart-icon">🛒</span>
+    <span id="cart-count">0</span>
+    <div id="cart-dropdown" class="hidden">
+     
+    </div>
+
+  </div>
+</div>
+
+  <div class="tab-content" id="tabContent"></div>
+</div>
+</div>
+  <script src="{% static 'app1/home.js' %}"></script>
+</body>
+</html>
